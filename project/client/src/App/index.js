@@ -1,12 +1,16 @@
+import { BrowserRouter as Router } from 'react-router-dom'
+
 import './styles/index.css'
 
 import { Conteiner } from './components'
-import { Home } from './pages'
+import Routes from './Routes'
 
 function App() {
   return (
     <Conteiner>
-      <Home />
+      <Router>
+        <Routes />
+      </Router>
     </Conteiner>
   )
 }
