@@ -1,8 +1,13 @@
+import './styles/index.css'
+
+import { Conteiner } from './components'
+import { Home } from './pages'
+
 function App() {
   return (
-    <div>
-      <p>Vasco da Gama</p>
-    </div>
+    <Conteiner>
+      <Home />
+    </Conteiner>
   )
 }
 

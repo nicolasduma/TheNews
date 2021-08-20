@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* GENERIC CLASSES */
+.d-flex {
+  display: flex;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
+}
