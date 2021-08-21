@@ -1,15 +1,16 @@
 import './styles.css'
 
-import { Head, Conteiner } from './../../components'
+import { Head, Conteiner } from '../../components'
+import Header from './Header'
 
-function Home(props) {
+function Home() {
   return (
-    <Conteiner className="Home" {...props}>
+    <Conteiner className="Home">
       <Head htmlAttributes={{ lang: 'pt-br' }}>
         <title>TheNews - Home</title>
       </Head>
 
-      <p>Test</p>
+      <Header />
     </Conteiner>
   )
 }
