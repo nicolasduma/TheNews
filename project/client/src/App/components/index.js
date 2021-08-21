@@ -1,4 +1,4 @@
+import { Conteiner, Header, Footer, Main, Img, H1, H2, H3, P } from './tags'
 import Head from './Head'
-import Conteiner from './Conteiner'
 
-export { Head, Conteiner }
+export { Conteiner, Header, Footer, Main, Img, H1, H2, H3, P, Head }
