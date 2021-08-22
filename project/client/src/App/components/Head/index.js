@@ -8,4 +8,5 @@ function Head({ children, ...rest }) {
   )
 }
 
+export { Head }
 export default Head
