@@ -4,6 +4,7 @@ export const Conteiner = createTag('div', 'Conteniner')
 export const Header = createTag('header', 'Header')
 export const Footer = createTag('footer', 'Footer')
 export const Main = createTag('main', 'Main')
+export const Section = createTag('section', 'Section')
 
 export const Img = createTag('img', 'Img')
 
