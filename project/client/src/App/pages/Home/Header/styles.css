@@ -2,8 +2,10 @@
   width: 100%;
   height: 500px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 50px;
   position: relative;
   background-color: rgba(7, 33, 80, 0.93);
 }
@@ -20,8 +22,19 @@
 }
 
 .H1 {
-  font-family: 'Poppins', 'Helvetica', sans-serif;
-  font-size: 5rem;
-  font-weight: 500;
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.H1,
+.P {
   color: #ffffff;
+  text-align: center;
+}
+
+.P {
+  font-family: 'Poppins', 'Raleway', 'Helvetica', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
 }

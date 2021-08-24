@@ -1,10 +1,15 @@
 import './styles.css'
-import { Header as HeaderElement, H1 } from '../../../components'
+import { Conteiner, Header as HeaderElement, H1, P } from '../../../components'
+import Search from './Search'
 
 function Header() {
   return (
     <HeaderElement>
-      <H1>TheNews</H1>
+      <Conteiner>
+        <H1>TheNews</H1>
+        <P>As melhores notícias</P>
+      </Conteiner>
+      <Search />
     </HeaderElement>
   )
 }
