@@ -1,27 +1,16 @@
-const express = require('express')
-const app = express()
-const path = require('path')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App/index'
+import reportWebVitals from './reportWebVitals'
 
-// >>> Start Functions <<<
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 
-function startServer() {
-  app.listen(process.env.PORT, () => {
-    console.log(`>>> Server running on port ${process.env.PORT} <<<`)
-  })
-}
-
-function startSendFile(directory) {
-  directory = path.join(__dirname, `/../${directory}`)
-
-  app.use(express.static(directory))
-
-  app.get('*', (req, res) => {
-    res.sendFile(`${directory}/index.html`, error => {
-      if (error) res.status(500).send(error)
-    })
-  })
-}
-
-if (process.env.STATE !== 'development') startSendFile('client/build')
-
-module.exports = { startServer }
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()
