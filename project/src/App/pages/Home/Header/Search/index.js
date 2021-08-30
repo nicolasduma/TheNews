@@ -1,15 +1,14 @@
-import './style.css'
-
-import { Conteiner, Input, Select, Option, Button } from '../../../../components'
+import { Conteiner } from './style.js'
+import React from 'react'
 
 function Search() {
   return (
-    <Conteiner id="Search">
-      <Input placeholder="Título da notícia" spellCheck="false" maxLength={60} />
-      <Select>
-        <Option children="Todas" value="all" selected />
-      </Select>
-      <Button>Pesquisar</Button>
+    <Conteiner>
+      <input placeholder="Título da notícia" spellCheck="false" maxLength={60} />
+      <select>
+        <option children="Todas" value="all" defaultValue />
+      </select>
+      <button>Pesquisar</button>
     </Conteiner>
   )
 }

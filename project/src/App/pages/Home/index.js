@@ -1,12 +1,10 @@
-import './styles.css'
-
-import { Head, Conteiner } from '../../components'
+import { Head } from '../../components'
 import Header from './Header'
 import NewsConteiner from './NewsConteiner'
 
 function Home() {
   return (
-    <Conteiner className="Home">
+    <div className="Home">
       <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - Home">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,7 +22,7 @@ function Home() {
 
       <Header />
       <NewsConteiner />
-    </Conteiner>
+    </div>
   )
 }
 

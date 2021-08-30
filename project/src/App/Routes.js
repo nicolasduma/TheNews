@@ -1,15 +1,14 @@
 import { Route, Switch } from 'react-router-dom'
 
-import { Main } from './components'
 import { Home } from './pages'
 
 function Routes() {
   return (
-    <Main>
+    <main>
       <Switch>
         <Route exact path={['/', '/home']} component={Home} />
       </Switch>
-    </Main>
+    </main>
   )
 }
 

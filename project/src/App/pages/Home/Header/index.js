@@ -1,14 +1,13 @@
-import './styles.css'
-import { Conteiner, Header as HeaderElement, H1, P } from '../../../components'
+import { HeaderElement } from './styles.js'
 import Search from './Search'
 
 function Header() {
   return (
     <HeaderElement>
-      <Conteiner>
-        <H1>TheNews</H1>
-        <P>As melhores notícias</P>
-      </Conteiner>
+      <div>
+        <h1>TheNews</h1>
+        <p>As melhores notícias</p>
+      </div>
       <Search />
     </HeaderElement>
   )

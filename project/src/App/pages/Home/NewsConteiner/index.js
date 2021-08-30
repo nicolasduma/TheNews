@@ -1,9 +1,7 @@
-import './styles.css'
-
-import { Section } from '../../../components'
+import './styles.js'
 
 function NewsConteiner() {
-  return <Section></Section>
+  return <section></section>
 }
 
 export default NewsConteiner
