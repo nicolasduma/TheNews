@@ -1,11 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const fonts = {
+  raleway: `'Raleway', 'Helvetica', sans-serif`,
+  poppins: `'Poppins', 'Helvetica', sans-serif`,
+}
+
 const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: ${fonts.raleway};
 }
 
 html {

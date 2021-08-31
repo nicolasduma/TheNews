@@ -11,8 +11,8 @@ function News({ key, title, category, source }) {
       <div>
         <div>
           <h2>{title}</h2>
-          <p>{category}</p>
-          <p>{source}</p>
+          <p>Categoria: {category}</p>
+          <p>Fonte: {source}</p>
         </div>
         <button onClick={readNews}>Ler notícia</button>
       </div>

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import backgroundHeader from '../../../assets/images/newspaper.jpg'
+import { fonts } from '../../../styles'
 
 export const HeaderElement = styled.header`
   width: 100%;
@@ -36,7 +37,7 @@ export const HeaderElement = styled.header`
   }
 
   p {
-    font-family: 'Poppins', 'Raleway', 'Helvetica', sans-serif;
+    font-family: ${fonts.poppins};
     font-size: 1.6rem;
     font-weight: 300;
   }
