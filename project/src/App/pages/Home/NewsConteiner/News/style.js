@@ -47,6 +47,5 @@ export const Conteiner = styled.li`
 export const Image = styled.img`
   width: 375px;
   height: 100%;
-  background-image: url();
-  background-size: cover;
+  border-radius: 7px;
 `
