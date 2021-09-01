@@ -1,20 +1,20 @@
 import { Conteiner, Image } from './style'
 
-function readNews(id) {
-  alert(id)
-}
+import { Link } from 'react-router-dom'
 
-function News({ key, title, category, source }) {
+import ImageSrc from '../../../../assets/images/newspaper.jpg'
+
+function News({ id, title, category, source }) {
   return (
-    <Conteiner key={key}>
-      <Image />
+    <Conteiner key={id}>
+      <Image alt={title} src={ImageSrc} />
       <div>
+        <h2>{title}</h2>
         <div>
-          <h2>{title}</h2>
           <p>Categoria: {category}</p>
           <p>Fonte: {source}</p>
         </div>
-        <button onClick={readNews}>Ler notícia</button>
+        <Link to={`/news/${id}`}>Ler notícia</Link>
       </div>
     </Conteiner>
   )

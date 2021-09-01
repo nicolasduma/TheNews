@@ -1,18 +1,18 @@
-import './styles.js'
+import { Conteiner } from './styles'
 
 import News from './News'
 
 function NewsConteiner() {
   return (
     <section>
-      <ul>
+      <Conteiner>
         <News
-          key="açkjdfçlakjdçfkj"
+          id="açkjdfçlakjdçfkj"
           title="Vasco campeão!"
           category="Esporte"
           source="GloboEsporte"
         />
-      </ul>
+      </Conteiner>
     </section>
   )
 }
