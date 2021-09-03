@@ -1,8 +1,16 @@
+import { useEffect } from 'react'
+
 import { Head } from '../../components'
 import Header from './Header'
 import NewsConteiner from './NewsConteiner'
 
+import getNews from '../../services/news/get'
+
 function Home() {
+  useEffect(() => {
+    getNews()
+  }, [])
+
   return (
     <div className="Home">
       <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - Home">
