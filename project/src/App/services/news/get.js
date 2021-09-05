@@ -1,14 +1,21 @@
 import { db } from '../../firebase'
 
-const all = () =>
-  db
-    .collection('news')
+const all = () => {
+  let shot
+
+  db.collection('news')
     .get()
-    .then(snapshot => {
-      snapshot.forEach(doc => console.log(doc.data()))
-    })
+    .then(snapshot => (shot = { ...snapshot }))
     .catch(error => {
       if (error) console.log(error)
     })
+
+  console.log(shot)
+
+  // shot.forEach(doc => {
+  //   docs.push(doc.data())
+  //   console.log(doc.data())
+  // }
+}
 
 export default all
