@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Head } from '../../components'
 import Header from './Header'
@@ -7,9 +7,11 @@ import NewsConteiner from './NewsConteiner'
 import getNews from '../../services/news/get'
 
 function Home() {
-  useEffect(() => {
-    getNews()
-  }, [])
+  const [allNews, setAllNews] = useState([])
+
+  useEffect(() => getNews.all().then(docs => setAllNews(docs)), [])
+
+  useEffect(() => console.log(allNews), [allNews])
 
   return (
     <div className="Home">

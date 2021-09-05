@@ -1,21 +1,15 @@
 import { db } from '../../firebase'
 
-const all = () => {
-  let shot
+const newsCollection = db.collection('news')
 
-  db.collection('news')
-    .get()
-    .then(snapshot => (shot = { ...snapshot }))
-    .catch(error => {
-      if (error) console.log(error)
-    })
+const all = async () => {
+  const snapshot = await newsCollection.get()
+  let docs = []
 
-  console.log(shot)
-
-  // shot.forEach(doc => {
-  //   docs.push(doc.data())
-  //   console.log(doc.data())
-  // }
+  snapshot.forEach(doc => docs.push({ _id: doc.id, ...doc.data() }))
+  return docs
 }
 
-export default all
+const services = { all }
+
+export default services
