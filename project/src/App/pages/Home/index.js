@@ -31,7 +31,7 @@ function Home() {
       </Head>
 
       <Header />
-      <NewsConteiner />
+      <NewsConteiner allNews={allNews} />
     </div>
   )
 }

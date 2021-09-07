@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 import ImageSrc from '../../../../assets/images/newspaper.jpg'
 
-function News({ id, title, category, source }) {
+function News({ _id, title, category, source }) {
   return (
-    <Conteiner key={id}>
+    <Conteiner key={_id}>
       <Image alt={title} src={ImageSrc} />
       <div>
         <h2>{title}</h2>
@@ -14,7 +14,7 @@ function News({ id, title, category, source }) {
           <p>Categoria: {category}</p>
           <p>Fonte: {source}</p>
         </div>
-        <Link to={`/news/${id}`}>Ler notícia</Link>
+        <Link to={`/news/${_id}`}>Ler notícia</Link>
       </div>
     </Conteiner>
   )

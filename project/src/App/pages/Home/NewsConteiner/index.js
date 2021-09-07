@@ -2,16 +2,13 @@ import { Conteiner } from './styles'
 
 import News from './News'
 
-function NewsConteiner() {
+function NewsConteiner(props) {
   return (
     <section>
       <Conteiner>
-        <News
-          id="açkjdfçlakjdçfkj"
-          title="Vasco campeão!"
-          category="Esporte"
-          source="GloboEsporte"
-        />
+        {props.allNews.map(news => (
+          <News {...news} />
+        ))}
       </Conteiner>
     </section>
   )
