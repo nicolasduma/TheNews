@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react'
-
 import { Head } from '../../components'
 import Header from './Header'
 import NewsConteiner from './NewsConteiner'
 
-import getNews from '../../services/news/get'
-
 function Home() {
-  const [allNews, setAllNews] = useState([])
-
-  useEffect(() => getNews.all().then(docs => setAllNews(docs)), [])
-
-  useEffect(() => console.log(allNews), [allNews])
-
   return (
     <div className="Home">
       <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - Home">
@@ -31,7 +21,7 @@ function Home() {
       </Head>
 
       <Header />
-      <NewsConteiner allNews={allNews} />
+      <NewsConteiner />
     </div>
   )
 }

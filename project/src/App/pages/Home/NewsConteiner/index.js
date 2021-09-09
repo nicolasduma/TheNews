@@ -1,13 +1,23 @@
+import { useState, useEffect } from 'react'
+
 import { Conteiner } from './styles'
 
 import News from './News'
+import get from '../../../services/news/get'
 
-function NewsConteiner(props) {
+function NewsConteiner() {
+  const [allNews, setAllNews] = useState([])
+
+  useEffect(() => {
+    const update = async () => setAllNews(await get.all())
+    update()
+  }, [])
+
   return (
     <section>
       <Conteiner>
-        {props.allNews.map(news => (
-          <News {...news} />
+        {allNews.map(news => (
+          <News key={news._id} {...news} />
         ))}
       </Conteiner>
     </section>
