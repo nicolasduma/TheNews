@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Conteiner } from './styles'
+import { Conteiner, Title, Category, Description, Source } from './styles'
 import get from '../../services/news/get'
 
 function News() {
@@ -15,14 +15,14 @@ function News() {
     }
     update()
   }, [id])
-
-  useEffect(() => {
-    if (news._id) {
-      console.log(news)
-    }
-  }, [news])
-
-  return <Conteiner></Conteiner>
+  return (
+    <Conteiner>
+      <Title children={news.title} />
+      <Category children={news.category} />
+      <Description children={news.description} />
+      <Source children={news.source} />
+    </Conteiner>
+  )
 }
 
 export default News
