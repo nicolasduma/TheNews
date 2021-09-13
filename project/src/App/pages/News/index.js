@@ -5,17 +5,22 @@ import { Conteiner } from './styles'
 import get from '../../services/news/get'
 
 function News() {
-  function getNews() {
-    const vasco = useParams
-    console.log(vasco())
-  }
   const [news, setNews] = useState({})
+  const { id } = useParams()
 
   useEffect(() => {
-    // const update = () => setNews(GetNews())
-    // update()
-    getNews()
-  }, [])
+    const update = async () => {
+      const allNews = await get.all()
+      setNews(allNews.filter(doc => doc._id === id)[0])
+    }
+    update()
+  }, [id])
+
+  useEffect(() => {
+    if (news._id) {
+      console.log(news)
+    }
+  }, [news])
 
   return <Conteiner></Conteiner>
 }
