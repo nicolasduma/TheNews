@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Conteiner, Title, Category, Description, Source } from './styles'
+import { Conteiner, Come, Title, Category, Description, Source } from './styles'
 import get from '../../services/news/get'
 
 function News() {
@@ -17,6 +17,7 @@ function News() {
   }, [id])
   return (
     <Conteiner>
+      <Come children="Voltar" />
       <Title children={news.title} />
       <Category children={news.category} />
       <Description children={news.description} />
