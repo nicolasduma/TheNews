@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-import { Conteiner, Come, Title, Category, Description, Source } from './styles'
+import { Head } from '../../components'
+import { Conteiner, Title, Description, Source } from './styles'
 import get from '../../services/news/get'
 
 function News() {
@@ -17,11 +18,12 @@ function News() {
   }, [id])
   return (
     <Conteiner>
-      <Come children="Voltar" />
+      <Head htmlAttributes={{ lang: 'pt-br' }} title={`TheNews - ${news.title}`} />
+
+      <Link to="/" children="Voltar" />
       <Title children={news.title} />
-      <Category children={news.category} />
       <Description children={news.description} />
-      <Source children={news.source} />
+      <Source children={`Fonte: ${news.source}`} />
     </Conteiner>
   )
 }

@@ -24,8 +24,20 @@ li {
 }
 
 a {
-  text-decoration: none;
-}
+    width: 150px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 0.3em;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: #5bb640;
+    color: #ffffff;
+    cursor: pointer;
+  }
 `
 
 export default GlobalStyle

@@ -1,32 +1,30 @@
 import styled from 'styled-components'
+import fonts from '../../styles/index'
 
 export const Conteiner = styled.div`
   width: 100%;
   padding: 30px 25%;
   display: flex;
   flex-direction: column;
+
+  a {
+    align-self: center;
+    margin-bottom: 40px;
+  }
 `
 
-export const Come = styled.a`
-  width: 150px;
-  height: 45px;
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 0.3em;
-  font-size: 1.6rem;
+export const Title = styled.h1`
+  font-size: 5rem;
+`
+
+export const Description = styled.p`
+  font-size: 1.8rem;
   font-weight: 500;
-  background-color: #5bb640;
-  color: #ffffff;
-  cursor: pointer;
+  font-family: ${fonts.poppins};
 `
 
-export const Title = styled.h1``
-
-export const Category = styled.h2``
-
-export const Description = styled.p``
-
-export const Source = styled.span``
+export const Source = styled.span`
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.5rem;
+`

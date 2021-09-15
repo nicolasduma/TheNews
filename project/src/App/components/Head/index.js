@@ -1,9 +1,5 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { Helmet } from 'react-helmet'
 
 export function Head({ children, ...rest }) {
-  return (
-    <HelmetProvider>
-      <Helmet {...rest}>{children}</Helmet>
-    </HelmetProvider>
-  )
+  return <Helmet {...rest}>{children}</Helmet>
 }

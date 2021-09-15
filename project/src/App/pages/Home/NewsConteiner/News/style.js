@@ -27,21 +27,6 @@ export const Conteiner = styled.li`
     font-family: ${fonts.poppins};
     color: #505050;
   }
-
-  a {
-    width: 150px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 0.3em;
-    font-size: 1.6rem;
-    font-weight: 500;
-    background-color: #5bb640;
-    color: #ffffff;
-    cursor: pointer;
-  }
 `
 
 export const Image = styled.img`
