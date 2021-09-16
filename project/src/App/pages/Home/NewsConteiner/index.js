@@ -1,18 +1,7 @@
-import { useState, useEffect } from 'react'
-
 import { Conteiner } from './styles'
-
 import News from './News'
-import get from '../../../services/news/get'
 
-function NewsConteiner() {
-  const [allNews, setAllNews] = useState([])
-
-  useEffect(() => {
-    const update = async () => setAllNews(await get.all())
-    update()
-  }, [])
-
+function NewsConteiner({ allNews }) {
   return (
     <section>
       <Conteiner>
