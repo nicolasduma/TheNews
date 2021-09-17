@@ -1,7 +1,12 @@
 import { Conteiner } from './styles'
 import News from './News'
+import { useEffect } from 'react'
 
-function NewsConteiner({ allNews }) {
+function NewsConteiner({ allNews, filter }) {
+  useEffect(() => {
+    console.log(filter)
+  }, [filter])
+
   return (
     <section>
       <Conteiner>

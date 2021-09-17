@@ -8,7 +8,7 @@ import get from '../../services/news/get'
 
 function Home() {
   const [allNews, setAllNews] = useState([])
-  const [functionForRender, setFunctionForRender] = useState(function () {})
+  const [filter, setFilter] = useState(() => {})
 
   useEffect(() => {
     const update = async () => setAllNews(await get.all())
@@ -19,8 +19,8 @@ function Home() {
     <div className="Home">
       <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - Home" />
 
-      <Header />
-      <NewsConteiner allNews={allNews} />
+      <Header setFilter={setFilter} />
+      <NewsConteiner filter={filter} allNews={allNews} />
     </div>
   )
 }

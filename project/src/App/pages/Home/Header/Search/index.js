@@ -1,14 +1,28 @@
 import { Conteiner } from './style.js'
-import React from 'react'
+import { useState } from 'react'
 
-function Search() {
+function Search({ setFilter }) {
+  const [title, setTitle] = useState('')
+  const [category, setCategory] = useState('all')
+
+  function startFilter() {
+    setFilter({ title, category })
+  }
+
   return (
     <Conteiner>
-      <input placeholder="Título da notícia" spellCheck="false" maxLength={60} />
-      <select>
+      <input
+        placeholder="Título da notícia"
+        spellCheck="false"
+        maxLength={60}
+        value={title}
+        onChange={event => setTitle(event.target.value)}
+      />
+      <select value={category} onChange={event => setCategory(event.target.value)}>
         <option children="Todas" value="all" defaultValue />
       </select>
-      <button>Pesquisar</button>
+
+      <button onClick={() => startFilter()}>Pesquisar</button>
     </Conteiner>
   )
 }
