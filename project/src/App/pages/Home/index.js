@@ -8,7 +8,7 @@ import get from '../../services/news/get'
 
 function Home() {
   const [allNews, setAllNews] = useState([])
-  const [filter, setFilter] = useState(() => {})
+  const [filter, setFilter] = useState({ title: '', category: 'all' })
 
   useEffect(() => {
     const update = async () => setAllNews(await get.all())
