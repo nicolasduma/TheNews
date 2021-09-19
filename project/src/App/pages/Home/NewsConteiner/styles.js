@@ -6,3 +6,8 @@ export const Conteiner = styled.ul`
   flex-direction: column;
   gap: 60px;
 `
+
+export const NoNewsFound = styled.h3`
+  text-align: center;
+  font-size: 2.5rem;
+`
