@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react'
+
 import { Conteiner, NoNewsFound } from './styles'
 import News from './News'
-import { useEffect, useState } from 'react'
 
 function vasco(filterTitle, title) {
   let result = []
@@ -23,12 +24,11 @@ function NewsConteiner({ allNews, filter }) {
   useEffect(() => {
     filter.title = filter.title.trim()
 
-    setFiltedNews(
+    setFiltedNews(() =>
       allNews.filter(news => {
         return (
           (news.category === filter.category || filter.category === 'all') &&
-          vasco(filter.title.toUpperCase().split(''), news.title.toUpperCase().split('')) &&
-          false
+          vasco(filter.title.toUpperCase().split(''), news.title.toUpperCase().split(''))
         )
       })
     )
@@ -39,8 +39,10 @@ function NewsConteiner({ allNews, filter }) {
       <Conteiner>
         {filtedNews[0] ? (
           filtedNews.map(news => <News key={news._id} {...news} />)
-        ) : (
+        ) : filter.title ? (
           <NoNewsFound>Nenhuma notícia encontrada</NoNewsFound>
+        ) : (
+          ''
         )}
       </Conteiner>
     </section>
