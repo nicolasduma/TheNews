@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react'
 import { Conteiner, NoNewsFound } from './styles'
 import News from './News'
 
-function vasco(filterTitle, title) {
+function matchSearch(filterTitle, title) {
   let result = []
+
+  console.log(title)
 
   if (filterTitle[0]) {
     filterTitle = filterTitle.filter(character => character !== ' ')
@@ -15,7 +17,7 @@ function vasco(filterTitle, title) {
     }
   }
 
-  return filterTitle[0] ? result.reduce((total, boolean) => total === boolean, true) : true
+  return filterTitle[0] ? result.reduce((total, boolean) => total && boolean, true) : true
 }
 
 function NewsConteiner({ allNews, filter }) {
@@ -28,7 +30,7 @@ function NewsConteiner({ allNews, filter }) {
       allNews.filter(news => {
         return (
           (news.category === filter.category || filter.category === 'all') &&
-          vasco(filter.title.toUpperCase().split(''), news.title.toUpperCase().split(''))
+          matchSearch(filter.title.toUpperCase().split(''), news.title.toUpperCase().split(''))
         )
       })
     )
