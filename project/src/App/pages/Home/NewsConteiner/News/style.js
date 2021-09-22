@@ -9,7 +9,7 @@ export const Conteiner = styled.li`
   gap: 30px;
 
   > div {
-    width: 375px;
+    width: 500px;
     height: 100%;
     display: flex;
     flex-direction: column;

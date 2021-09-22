@@ -20,6 +20,8 @@ function Search({ setFilter }) {
       />
       <select value={category} onChange={event => setCategory(event.target.value)}>
         <option children="Todas" value="all" defaultValue />
+        <option children="Esporte" value="Esporte" defaultValue />
+        <option children="Política" value="Política" defaultValue />
       </select>
 
       <button onClick={() => startFilter()}>Pesquisar</button>
