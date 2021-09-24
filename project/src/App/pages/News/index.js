@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Head } from '../../components'
-import { Conteiner, Title, Description, Source } from './styles'
+import { Conteiner, Content, Title, Description, Source } from './styles'
 import get from '../../services/news/get'
 
 function News() {
@@ -11,19 +11,24 @@ function News() {
 
   useEffect(() => {
     const update = async () => {
-      const allNews = await get.all()
-      setNews(allNews.filter(doc => doc._id === id)[0])
+      setNews(await get.newsById(id))
     }
     update()
   }, [id])
   return (
     <Conteiner>
-      <Head htmlAttributes={{ lang: 'pt-br' }} title={`TheNews - ${news.title}`} />
+      {news._id ? (
+        <Content>
+          <Head htmlAttributes={{ lang: 'pt-br' }} title={`TheNews - ${news.title}`} />
 
-      <Link to="/" children="Voltar" />
-      <Title children={news.title} />
-      <Description children={news.description} />
-      <Source children={`Fonte: ${news.source}`} />
+          <Link to="/" children="Voltar" />
+          <Title children={news.title} />
+          <Description children={news.description} />
+          <Source children={`Fonte: ${news.source}`} />
+        </Content>
+      ) : (
+        ''
+      )}
     </Conteiner>
   )
 }

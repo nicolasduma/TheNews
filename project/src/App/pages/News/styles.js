@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import fonts from '../../styles/index'
 
-export const Conteiner = styled.div`
+export const Conteiner = styled.div``
+
+export const Content = styled.div`
   width: 100%;
-  padding: 30px 25%;
+  padding: 30px 20%;
   display: flex;
   flex-direction: column;
 
@@ -14,7 +16,7 @@ export const Conteiner = styled.div`
 `
 
 export const Title = styled.h1`
-  font-size: 5rem;
+  font-size: 4.5rem;
 `
 
 export const Description = styled.p`

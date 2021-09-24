@@ -10,6 +10,12 @@ const all = async () => {
   return docs
 }
 
-const services = { all }
+const newsById = async id => {
+  const snapshot = await newsCollection.doc(id).get()
+  console.log(snapshot)
+  return { _id: snapshot.id, ...snapshot.data() }
+}
+
+const services = { all, newsById }
 
 export default services
