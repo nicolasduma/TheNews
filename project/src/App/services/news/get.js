@@ -12,8 +12,6 @@ const all = async () => {
     return docs.push({ _id: doc.id, ...data })
   })
 
-  console.log(docs)
-
   return docs.sort((a, b) => {
     return a.created > b.created ? -1 : a.created < b.created ? 1 : 0
   })
