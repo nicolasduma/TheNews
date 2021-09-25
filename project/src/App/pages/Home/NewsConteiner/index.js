@@ -6,8 +6,6 @@ import News from './News'
 function matchSearch(filterTitle, title) {
   let result = []
 
-  console.log(title)
-
   if (filterTitle[0]) {
     filterTitle = filterTitle.filter(character => character !== ' ')
     title = title.filter(character => character !== ' ')
