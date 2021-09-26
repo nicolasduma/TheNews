@@ -1,9 +1,17 @@
+import { useEffect, useState } from 'react'
 import { Conteiner } from './style.js'
-import { useState } from 'react'
+
+import get from '../../../../services/categories/get'
 
 function Search({ setFilter }) {
+  const [categories, setCategories] = useState([])
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('all')
+
+  useEffect(() => {
+    const update = async () => setCategories(await get())
+    update()
+  }, [categories])
 
   function startFilter() {
     setFilter({ title, category })
@@ -20,8 +28,16 @@ function Search({ setFilter }) {
       />
       <select value={category} onChange={event => setCategory(event.target.value)}>
         <option children="Todas" value="all" defaultValue />
-        <option children="Esporte" value="Esporte" defaultValue />
-        <option children="Política" value="Política" defaultValue />
+        {categories[0]
+          ? categories.map(category => (
+              <option
+                key={`option-${category}`}
+                children={category}
+                value={category}
+                defaultValue
+              />
+            ))
+          : ''}
       </select>
 
       <button onClick={() => startFilter()}>Pesquisar</button>
