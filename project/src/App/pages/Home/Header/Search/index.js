@@ -11,7 +11,7 @@ function Search({ setFilter }) {
   useEffect(() => {
     const update = async () => setCategories(await get())
     update()
-  }, [categories])
+  }, [])
 
   function startFilter() {
     setFilter({ title, category })
