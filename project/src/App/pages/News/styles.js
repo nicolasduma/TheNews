@@ -30,3 +30,8 @@ export const Source = styled.span`
   font-weight: 700;
   font-size: 1.5rem;
 `
+
+export const NotFoundNews = styled.h2`
+  text-align: center;
+  font-size: 3rem;
+`

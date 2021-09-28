@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Head } from '../../components'
-import { Conteiner, Content, Title, Description, Source } from './styles'
+import { Conteiner, Content, Title, Description, Source, NotFoundNews } from './styles'
 import get from '../../services/news/get'
 
 function News() {
@@ -17,7 +17,8 @@ function News() {
   }, [id])
   return (
     <Conteiner>
-      {news._id ? (
+      <Head htmlAttributes={{ lang: 'pt-br' }} title={`The News`} />
+      {news.title ? (
         <Content>
           <Head htmlAttributes={{ lang: 'pt-br' }} title={`TheNews - ${news.title}`} />
 
@@ -26,8 +27,16 @@ function News() {
           <Description children={news.description} />
           <Source children={`Fonte: ${news.source}`} />
         </Content>
+      ) : news._id ? (
+        <Content>
+          <Head htmlAttributes={{ lang: 'pt-br' }} title={`Notícia não encontrada`} />
+          <Link to="/" children="Voltar" />
+          <NotFoundNews children="Notícia não encontrada" />
+        </Content>
       ) : (
-        ''
+        <Content>
+          <Head htmlAttributes={{ lang: 'pt-br' }} title={`The News`} />
+        </Content>
       )}
     </Conteiner>
   )
