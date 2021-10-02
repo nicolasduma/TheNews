@@ -4,6 +4,13 @@ import { Head } from './components'
 import Routes from './Routes'
 
 function App() {
+  const [allNews, setAllNews] = useState([])
+
+  useEffect(() => {
+    const update = async () => setAllNews(await get.all())
+    update()
+  }, [])
+
   return (
     <div>
       <Head>
@@ -23,7 +30,7 @@ function App() {
 
       <GlobalStyle />
 
-      <Routes />
+      <Routes states={allNews} />
     </div>
   )
 }

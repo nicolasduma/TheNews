@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { Home, News } from './pages'
 
-function Routes() {
+function Routes({ states }) {
   return (
     <Router>
       <main>
