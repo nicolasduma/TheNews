@@ -2,6 +2,7 @@ import GlobalStyle from './styles'
 
 import { Head } from './components'
 import Routes from './Routes'
+import get from './services/news/get'
 
 function App() {
   const [allNews, setAllNews] = useState([])

@@ -6,14 +6,8 @@ import NewsConteiner from './NewsConteiner'
 
 import get from '../../services/news/get'
 
-function Home() {
-  const [allNews, setAllNews] = useState([])
+function Home({ allNews }) {
   const [filter, setFilter] = useState({ title: '', category: 'all' })
-
-  useEffect(() => {
-    const update = async () => setAllNews(await get.all())
-    update()
-  }, [])
 
   return (
     <div className="Home">
