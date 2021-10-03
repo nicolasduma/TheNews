@@ -5,7 +5,7 @@ import { Head } from '../../components'
 import { Conteiner, Content, Title, Description, Source, NotFoundNews } from './styles'
 import get from '../../services/news/get'
 
-function News() {
+function News({ allNews }) {
   const [news, setNews] = useState({})
   const { id } = useParams()
 

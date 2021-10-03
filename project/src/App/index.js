@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 import GlobalStyle from './styles'
 
 import { Head } from './components'
@@ -31,7 +33,7 @@ function App() {
 
       <GlobalStyle />
 
-      <Routes states={allNews} />
+      <Routes states={{ allNews }} />
     </div>
   )
 }

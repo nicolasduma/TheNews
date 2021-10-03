@@ -7,8 +7,12 @@ function Routes({ states }) {
     <Router>
       <main>
         <Switch>
-          <Route exact path={['/', '/home']} component={Home} />
-          <Route exact path={'/news/:id'} component={News} />
+          <Route exact path={['/', '/home']}>
+            <Home allNews={states.allNews} />
+          </Route>
+          <Route exact path={['/', '/home']}>
+            <News allNews={states.allNews} />
+          </Route>
         </Switch>
       </main>
     </Router>
