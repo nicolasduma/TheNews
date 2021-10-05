@@ -10,7 +10,7 @@ function Routes({ states }) {
           <Route exact path={['/', '/home']}>
             <Home allNews={states.allNews} />
           </Route>
-          <Route exact path={['/', '/home']}>
+          <Route exact path={'/news/:id'}>
             <News allNews={states.allNews} />
           </Route>
         </Switch>

@@ -10,10 +10,15 @@ function News({ allNews }) {
   const { id } = useParams()
 
   useEffect(() => {
-    const update = async () => {
-      setNews(await get.newsById(id))
+    if (allNews[0]) {
+      setNews(allNews.filter(news => news._id === id)[0])
+    } else {
+      const update = async () => {
+        setNews(await get.newsById(id))
+      }
+      update()
     }
-    update()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
   return (
     <Conteiner>
