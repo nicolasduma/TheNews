@@ -8,7 +8,7 @@ function Routes({ states }) {
       <main>
         <Switch>
           <Route exact path={['/', '/home']}>
-            <Home allNews={states.allNews} />
+            <Home allNews={states.allNews} setAllNews={states.setAllNews} />
           </Route>
           <Route exact path={'/news/:id'}>
             <News allNews={states.allNews} />

@@ -1,18 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import GlobalStyle from './styles'
 
 import { Head } from './components'
 import Routes from './Routes'
-import get from './services/news/get'
 
 function App() {
   const [allNews, setAllNews] = useState([])
-
-  useEffect(() => {
-    const update = async () => setAllNews(await get.all())
-    update()
-  }, [])
 
   return (
     <div>
@@ -33,7 +27,7 @@ function App() {
 
       <GlobalStyle />
 
-      <Routes states={{ allNews }} />
+      <Routes states={{ allNews, setAllNews }} />
     </div>
   )
 }
