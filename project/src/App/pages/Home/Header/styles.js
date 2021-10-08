@@ -41,4 +41,7 @@ export const HeaderElement = styled.header`
     font-size: 1.6rem;
     font-weight: 300;
   }
+
+  @media (max-width: '1200px') {
+  }
 `
