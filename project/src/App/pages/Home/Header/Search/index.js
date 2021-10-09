@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Conteiner } from './style.js'
+import { Conteiner } from './styles.js'
 
 import get from '../../../../services/categories/get'
 

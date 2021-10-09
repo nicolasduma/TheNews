@@ -13,10 +13,34 @@ export const Content = styled.div`
     align-self: center;
     margin-bottom: 40px;
   }
+
+  @media (max-width: 1100px) {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  @media (max-width: 700px) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @media (max-width: 500px) {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+  }
+
+  @media (max-width: 300px) {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 `
 
 export const Title = styled.h1`
   font-size: 4.5rem;
+
+  @media (max-width: 700px) {
+    font-size: 3.8rem;
+  }
 `
 
 export const Description = styled.p`

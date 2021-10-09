@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Conteiner = styled.div`
   border-radius: 10px;
-  width: 65%;
+  width: 6%;
   background-color: #ffffff;
   padding: 10px;
   display: flex;
@@ -71,6 +71,9 @@ export const Conteiner = styled.div`
   }
 
   @media (max-width: 1030px) {
+    width: 70%;
+    padding: 8px;
+
     &::after {
       content: '';
       display: block;
@@ -86,6 +89,14 @@ export const Conteiner = styled.div`
 
     select {
       margin-left: 3%;
+    }
+  }
+
+  @media (max-width: 850px) {
+    border-radius: 9px;
+
+    button {
+      height: 40px;
     }
   }
 `
