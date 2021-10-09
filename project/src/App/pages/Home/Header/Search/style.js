@@ -59,4 +59,33 @@ export const Conteiner = styled.div`
     color: #ffffff;
     cursor: pointer;
   }
+
+  @media (max-width: 1230px) {
+    select {
+      margin-left: 7%;
+      width: 100px;
+      padding-right: 6px;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 1030px) {
+    &::after {
+      content: '';
+      display: block;
+      height: 33%;
+      border-left: solid 1px #a5a5a5;
+      position: absolute;
+      left: 58%;
+    }
+
+    input {
+      width: 55%;
+    }
+
+    select {
+      margin-left: 3%;
+    }
+  }
 `
