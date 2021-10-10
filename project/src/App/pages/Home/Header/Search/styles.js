@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Conteiner = styled.div`
   border-radius: 10px;
-  width: 6%;
+  width: 65%;
   background-color: #ffffff;
   padding: 10px;
   display: flex;
@@ -35,7 +35,7 @@ export const Conteiner = styled.div`
 
   input {
     width: 60%;
-    padding: 10px;
+    padding: 0 1.5%;
   }
 
   input::placeholder,
@@ -44,8 +44,8 @@ export const Conteiner = styled.div`
   }
 
   select {
-    margin-left: 7%;
-    width: 150px;
+    margin-left: 5%;
+    width: 120px;
     padding-right: 12px;
     position: relative;
     cursor: pointer;
@@ -75,11 +75,6 @@ export const Conteiner = styled.div`
     padding: 8px;
 
     &::after {
-      content: '';
-      display: block;
-      height: 33%;
-      border-left: solid 1px #a5a5a5;
-      position: absolute;
       left: 58%;
     }
 
@@ -95,8 +90,51 @@ export const Conteiner = styled.div`
   @media (max-width: 850px) {
     border-radius: 9px;
 
+    width: 80%;
+    padding: 8px;
+
+    &::after {
+      left: 57%;
+    }
+
+    input {
+      width: 53%;
+    }
+
+    select {
+      width: 100px;
+      margin-left: 1.5%;
+    }
+
     button {
       height: 40px;
+      padding: 0 12px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    width: 85%;
+
+    &::after {
+      left: 53%;
+    }
+
+    input {
+      width: 50%;
+    }
+
+    button {
+      height: 38px;
+      padding: 0 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+
+    select {
+      width: 90px;
+      margin-left: 4%;
     }
   }
 `

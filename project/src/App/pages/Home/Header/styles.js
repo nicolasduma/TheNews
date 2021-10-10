@@ -41,4 +41,14 @@ export const HeaderElement = styled.header`
     font-size: 1.6rem;
     font-weight: 300;
   }
+
+  @media (max-width: 950px) {
+    height: 450px;
+  }
+
+  @media (max-width: 850px) {
+    &::before {
+      background-position: center 75%;
+    }
+  }
 `
