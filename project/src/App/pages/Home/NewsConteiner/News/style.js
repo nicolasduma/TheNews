@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { fonts } from '../../../../styles'
 
 export const Conteiner = styled.li`
-  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,7 @@ export const Conteiner = styled.li`
 
   > div {
     width: 500px;
-    height: 100%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,10 +26,41 @@ export const Conteiner = styled.li`
     font-family: ${fonts.poppins};
     color: #505050;
   }
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    > div {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    > div {
+      width: 85vw;
+    }
+  }
 `
 
 export const Image = styled.img`
   width: 375px;
-  height: 100%;
+  height: 250px;
   border-radius: 7px;
+
+  @media (max-width: 800px) {
+    width: 350px;
+    height: 233.3px;
+  }
+
+  @media (max-width: 450px) {
+    width: 300px;
+    height: 200px;
+  }
+
+  @media (max-width: 350px) {
+    width: 270px;
+    height: 180px;
+  }
 `

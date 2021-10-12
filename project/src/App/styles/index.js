@@ -45,6 +45,11 @@ a {
     background-color: #5bb640;
     color: #ffffff;
     cursor: pointer;
+
+    @media (max-width: 400px) {
+      width: 130px;
+      height: 43px;
+    }
   }
 `
 

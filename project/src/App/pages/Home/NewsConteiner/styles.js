@@ -6,6 +6,12 @@ export const Conteiner = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 60px;
+
+  @media (max-width: 850px) {
+    padding-left: 0%;
+    padding-right: 0%;
+    align-items: center;
+  }
 `
 
 export const NoNewsFound = styled.h3`
