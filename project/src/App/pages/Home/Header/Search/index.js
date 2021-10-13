@@ -7,11 +7,18 @@ function Search({ setFilter }) {
   const [categories, setCategories] = useState([])
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('all')
+  const [textButton, setTextButton] = useState('Pesquisar')
 
   useEffect(() => {
     const update = async () => setCategories(await get())
     update()
   }, [])
+
+  // useEffect(() => {
+  //   if (window.screen.width <= 450) setTextButton(
+  //     <img src="../../../../assets/images/search.png" alt="Search" />
+  //   )
+  // }, [])
 
   function startFilter() {
     setFilter({ title, category })
@@ -40,7 +47,7 @@ function Search({ setFilter }) {
           : ''}
       </select>
 
-      <button onClick={() => startFilter()}>Pesquisar</button>
+      <button onClick={() => startFilter()}>{textButton}</button>
     </Conteiner>
   )
 }

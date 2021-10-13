@@ -137,4 +137,32 @@ export const Conteiner = styled.div`
       margin-left: 4%;
     }
   }
+
+  @media (max-width: 500px) {
+    &::after {
+      left: 49%;
+    }
+
+    input {
+      width: 45%;
+    }
+
+    button {
+      font-size: 1.5rem;
+      height: 35px;
+      padding: 0 8px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    button {
+      font-size: 1.5rem;
+      height: 35px;
+      width: 35px;
+
+      > img {
+        width: 28px;
+      }
+    }
+  }
 `
