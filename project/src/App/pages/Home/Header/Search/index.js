@@ -2,23 +2,23 @@ import { useEffect, useState } from 'react'
 import { Conteiner } from './styles.js'
 
 import get from '../../../../services/categories/get'
+import imageSearch from '../../../../assets/images/search.png'
 
 function Search({ setFilter }) {
   const [categories, setCategories] = useState([])
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('all')
-  const [textButton, setTextButton] = useState('Pesquisar')
+  const [contentButton, setContentButton] = useState()
+
+  useEffect(() => {
+    if (window.screen.width > 450) setContentButton('Pesquisar')
+    else setContentButton(<img src={imageSearch} alt="Search" />)
+  }, [])
 
   useEffect(() => {
     const update = async () => setCategories(await get())
     update()
   }, [])
-
-  // useEffect(() => {
-  //   if (window.screen.width <= 450) setTextButton(
-  //     <img src="../../../../assets/images/search.png" alt="Search" />
-  //   )
-  // }, [])
 
   function startFilter() {
     setFilter({ title, category })
@@ -47,7 +47,7 @@ function Search({ setFilter }) {
           : ''}
       </select>
 
-      <button onClick={() => startFilter()}>{textButton}</button>
+      <button onClick={() => startFilter()}>{contentButton}</button>
     </Conteiner>
   )
 }

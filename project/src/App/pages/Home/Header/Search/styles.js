@@ -159,9 +159,12 @@ export const Conteiner = styled.div`
       font-size: 1.5rem;
       height: 35px;
       width: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       > img {
-        width: 28px;
+        width: 20px;
       }
     }
   }
