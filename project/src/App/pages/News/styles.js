@@ -39,7 +39,17 @@ export const Title = styled.h1`
   font-size: 4.5rem;
 
   @media (max-width: 700px) {
-    font-size: 3.8rem;
+    font-size: 3.6rem;
+  }
+`
+
+export const Cover = styled.img`
+  width: 100%;
+  margin: 18px 0;
+  border-radius: 8px;
+
+  @media (max-width: 450px) {
+    margin: 12px 0;
   }
 `
 
@@ -50,9 +60,14 @@ export const Description = styled.p`
 `
 
 export const Source = styled.span`
+  margin-top: 8px;
   text-align: right;
   font-weight: 700;
   font-size: 1.5rem;
+
+  @media (max-width: 450px) {
+    margin-top: 10px;
+  }
 `
 
 export const NotFoundNews = styled.h2`

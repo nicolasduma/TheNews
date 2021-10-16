@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Head } from '../../components'
-import { Conteiner, Content, Title, Description, Source, NotFoundNews } from './styles'
+import { Conteiner, Content, Title, Cover, Description, Source, NotFoundNews } from './styles'
+import imageCover from '../../assets/images/newspaper.jpg'
 import get from '../../services/news/get'
 
 function News({ allNews }) {
@@ -29,6 +30,7 @@ function News({ allNews }) {
 
           <Link to="/" children="Voltar" />
           <Title children={news.title} />
+          <Cover src={imageCover} />
           <Description children={news.description} />
           <Source children={`Fonte: ${news.source}`} />
         </Content>
