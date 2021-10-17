@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 import fonts from '../../styles/index'
 
-export const Conteiner = styled.div``
-
-export const Content = styled.div`
+export const Conteiner = styled.div`
   width: 100%;
   padding: 30px 20%;
+`
+
+export const Content = styled.div`
+  max-width: 850px;
+  border: solid 1px red;
   display: flex;
   flex-direction: column;
 
