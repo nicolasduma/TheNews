@@ -8,7 +8,6 @@ export const Conteiner = styled.div`
 
 export const Content = styled.div`
   max-width: 850px;
-  border: solid 1px red;
   display: flex;
   flex-direction: column;
 
