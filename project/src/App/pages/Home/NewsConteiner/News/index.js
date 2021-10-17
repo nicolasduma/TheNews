@@ -1,13 +1,11 @@
-import { Conteiner, Image } from './style'
+import { Conteiner, Cover } from './style'
 
 import { Link } from 'react-router-dom'
 
-import ImageSrc from '../../../../assets/images/newspaper.jpg'
-
-function News({ _id, title, category, source }) {
+function News({ _id, title, imageSrc, category, source }) {
   return (
     <Conteiner key={_id}>
-      <Image alt={title} src={ImageSrc} />
+      <Cover alt={title} src={imageSrc} />
       <div>
         <h2>{title}</h2>
         <div>

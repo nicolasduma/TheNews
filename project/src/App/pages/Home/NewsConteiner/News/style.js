@@ -44,7 +44,7 @@ export const Conteiner = styled.li`
   }
 `
 
-export const Image = styled.img`
+export const Cover = styled.img`
   width: 375px;
   height: 250px;
   border-radius: 7px;
