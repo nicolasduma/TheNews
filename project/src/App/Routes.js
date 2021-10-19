@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Home, News } from './pages'
+import { Home, News, AddNews } from './pages'
 
 function Routes({ states }) {
   return (
@@ -12,6 +12,9 @@ function Routes({ states }) {
           </Route>
           <Route exact path={'/news/:id'}>
             <News allNews={states.allNews} />
+          </Route>
+          <Route exact path={'/app/user/addNews/'}>
+            <AddNews />
           </Route>
         </Switch>
       </main>
