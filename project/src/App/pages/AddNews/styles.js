@@ -2,25 +2,28 @@ import styled from 'styled-components'
 
 export const Conteiner = styled.div`
   width: 100%;
+`
+
+export const Content = styled.div`
+  width: 100%;
   padding: 30px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
 `
 
 export const Title = styled.h1`
   font-size: 2rem;
+  text-align: center;
 `
 
 export const Form = styled.form`
   width: 100%;
-  padding: 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  margin-top: 25px;
 `
+
+export const FieldForm = styled.div``
 
 export const Label = styled.label`
   margin-bottom: 8px;
