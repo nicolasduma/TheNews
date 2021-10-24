@@ -13,6 +13,7 @@ import {
   TextArea,
   Button,
 } from './styles'
+import sendNews from './functions/sendNews'
 
 import get from '../../services/categories/get'
 
@@ -42,7 +43,7 @@ function AddNews() {
         <Form
           onSubmit={event => {
             event.preventDefault()
-            console.log(valueCategory, valueTitle, valueDescription, valueSource)
+            sendNews(valueCategory, valueTitle, valueDescription, valueSource)
           }}
         >
           <FieldForm>
