@@ -20,6 +20,8 @@ import get from '../../services/categories/get'
 function AddNews() {
   const [categories, setCategories] = useState([])
 
+  const [lockedSend, setLockedSend] = useState(false)
+
   const [valueCategory, setValueCategory] = useState('')
   const [valueTitle, setValueTitle] = useState('')
   const [valueDescription, setValueDescription] = useState('')
@@ -43,7 +45,14 @@ function AddNews() {
         <Form
           onSubmit={event => {
             event.preventDefault()
-            sendNews(valueCategory, valueTitle, valueDescription, valueSource)
+            sendNews(
+              lockedSend,
+              setLockedSend,
+              valueCategory,
+              valueTitle,
+              valueDescription,
+              valueSource
+            )
           }}
         >
           <FieldForm>
