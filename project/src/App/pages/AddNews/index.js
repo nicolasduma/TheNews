@@ -23,9 +23,10 @@ function AddNews() {
   const [lockedSend, setLockedSend] = useState(false)
 
   const [valueCategory, setValueCategory] = useState('')
-  const [valueTitle, setValueTitle] = useState('')
-  const [valueDescription, setValueDescription] = useState('')
-  const [valueSource, setValueSource] = useState('')
+  const [valueTitle, setValueTitle] = useState('123')
+  const [valueDescription, setValueDescription] = useState('123')
+  const [valueSource, setValueSource] = useState('123')
+  const [valueCover, setValueCover] = useState(['', ''])
 
   useEffect(() => {
     const update = async () => setCategories(await get())
@@ -51,7 +52,8 @@ function AddNews() {
               valueCategory,
               valueTitle,
               valueDescription,
-              valueSource
+              valueSource,
+              valueCover[1]
             )
           }}
         >
@@ -106,6 +108,7 @@ function AddNews() {
               id="input-source"
               type="text"
               maxLength={20}
+              Z
               required
               value={valueSource}
               onChange={event => setValueSource(event.target.value)}
@@ -113,8 +116,18 @@ function AddNews() {
           </FieldForm>
 
           <FieldForm>
-            <Label htmlFor="input-cover">Capa *</Label>
-            <Input id="input-cover" type="file" max={1} required />
+            <Label htmlFor="input-cover">Capa (Imagem no formato 4x3) *</Label>
+            <Input
+              id="input-cover"
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              max={1}
+              required
+              value={valueCover[0]}
+              onChange={event => {
+                setValueCover([event.target.value, event.target.files[0]])
+              }}
+            />
           </FieldForm>
 
           <Button type="submit" children="Enviar" />
