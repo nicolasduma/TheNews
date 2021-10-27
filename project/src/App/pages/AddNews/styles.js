@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { fonts } from '../../styles'
 
 export const Conteiner = styled.div`
   width: 100%;
@@ -28,9 +29,11 @@ export const FieldForm = styled.div``
 export const Label = styled.label`
   margin-bottom: 8px;
   display: block;
+  font-family: ${fonts.poppins};
   font-size: 1.8rem;
   cursor: pointer;
 `
+
 const selectInputAndTextArea = `
   padding: 5px 5px;
   font-size: 1.7rem;
