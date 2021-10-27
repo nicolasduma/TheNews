@@ -112,6 +112,11 @@ function AddNews() {
             />
           </FieldForm>
 
+          <FieldForm>
+            <Label htmlFor="input-cover">Capa *</Label>
+            <Input id="input-cover" type="file" max={1} required />
+          </FieldForm>
+
           <Button type="submit" children="Enviar" />
         </Form>
       </Content>
