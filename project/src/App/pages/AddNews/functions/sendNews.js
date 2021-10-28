@@ -1,4 +1,5 @@
 import add from '../../../services/news/add'
+import sendCover from './sendCover'
 
 const addNews = async (
   lockedSend,
@@ -6,10 +7,12 @@ const addNews = async (
   valueCategory,
   valueTitle,
   valueDescription,
-  valueSource
+  valueSource,
+  fileCover
 ) => {
   if (!lockedSend) {
     setLockedSend(true)
+    sendCover(fileCover)
     const news = {
       category: valueCategory,
       title: valueTitle,
@@ -20,7 +23,7 @@ const addNews = async (
         'https://firebasestorage.googleapis.com/v0/b/thenews-duma.appspot.com/o/images%2Fnewspaper.jpg?alt=media&token=a08b4fa1-488c-476d-8c9c-9ee47a0720b4',
     }
     try {
-      await add(news)
+      // await add(news)
       alert('Noticia adicionada com sucesso!')
       setLockedSend(false)
     } catch {
