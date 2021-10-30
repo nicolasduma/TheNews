@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Resizer from 'react-image-file-resizer'
 
 const resizeFile = file =>
@@ -12,6 +14,12 @@ const sendCover = async file => {
   } catch (error) {
     console.log(error)
   }
+}
+
+export const Image = () => {
+  const [srcImage, setSrcImage] = useState('')
+
+  return <img src={srcImage}></img>
 }
 
 export default sendCover
