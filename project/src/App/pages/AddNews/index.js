@@ -14,7 +14,6 @@ import {
   Button,
 } from './styles'
 import sendNews from './functions/sendNews'
-import { Image } from './functions/sendCover'
 
 import get from '../../services/categories/get'
 
@@ -133,7 +132,6 @@ function AddNews() {
 
           <Button type="submit" children="Enviar" />
         </Form>
-        <Image />
       </Content>
     </Conteiner>
   )
