@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import Resizer from 'react-image-file-resizer'
 
 const resizeFile = file =>
