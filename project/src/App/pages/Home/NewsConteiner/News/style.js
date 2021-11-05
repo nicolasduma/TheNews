@@ -44,23 +44,30 @@ export const Conteiner = styled.li`
   }
 `
 
+const styledCover = `
+width: 375px;
+height: 250px;
+border-radius: 7px;
+
+@media (max-width: 800px) {
+  width: 350px;
+  height: 233.3px;
+}
+
+@media (max-width: 450px) {
+  width: 300px;
+  height: 200px;
+}
+
+@media (max-width: 350px) {
+  width: 270px;
+  height: 180px;
+}`
+
 export const Cover = styled.img`
-  width: 375px;
-  height: 250px;
-  border-radius: 7px;
+  ${styledCover}
+`
 
-  @media (max-width: 800px) {
-    width: 350px;
-    height: 233.3px;
-  }
-
-  @media (max-width: 450px) {
-    width: 300px;
-    height: 200px;
-  }
-
-  @media (max-width: 350px) {
-    width: 270px;
-    height: 180px;
-  }
+export const PseudoCover = styled.span`
+  ${styledCover}
 `

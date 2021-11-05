@@ -1,11 +1,21 @@
-import { Conteiner, Cover } from './style'
-
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function News({ _id, title, imageSrc, category, source }) {
+import get from '../../../../services/news/get'
+
+import { Conteiner, Cover, PseudoCover } from './style'
+
+function News({ _id, title, category, source }) {
+  const [cover, setCover] = useState('')
+
+  useEffect(() => {
+    const update = async () => setCover(await get.cover('IMG_20210823_212319'))
+    update()
+  })
+
   return (
     <Conteiner key={_id}>
-      <Cover alt={title} src={imageSrc} />
+      {cover ? <Cover alt={title} src={cover} /> : <PseudoCover />}
       <div>
         <h2>{title}</h2>
         <div>

@@ -2,24 +2,37 @@ import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Head } from '../../components'
-import { Conteiner, Content, Title, Cover, Description, Source, NotFoundNews } from './styles'
+import {
+  Conteiner,
+  Content,
+  Title,
+  Cover,
+  PseudoCover,
+  Description,
+  Source,
+  NotFoundNews,
+} from './styles'
 import get from '../../services/news/get'
 
 function News({ allNews }) {
   const [news, setNews] = useState({})
+  const [cover, setCover] = useState('')
   const { id } = useParams()
 
   useEffect(() => {
-    if (allNews[0]) {
-      setNews(allNews.filter(news => news._id === id)[0])
-    } else {
+    if (allNews[0]) setNews(allNews.filter(news => news._id === id)[0])
+    else {
       const update = async () => {
         setNews(await get.newsById(id))
       }
       update()
+
+      const updateCover = async () => setCover(await get.cover('IMG_20210823_212319'))
+      updateCover()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
+
   return (
     <Conteiner>
       <Head htmlAttributes={{ lang: 'pt-br' }} title={`The News`} />
@@ -29,7 +42,11 @@ function News({ allNews }) {
 
           <Link to="/" children="Voltar" />
           <Title children={news.title} />
-          <Cover src={news.imageSrc} />
+          {news.cover || cover ? (
+            <Cover alt={news.title} src={news.cover || cover} />
+          ) : (
+            <PseudoCover />
+          )}
           <Description children={news.description} />
           <Source children={`Fonte: ${news.source}`} />
         </Content>

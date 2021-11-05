@@ -12,6 +12,7 @@ function Home({ allNews, setAllNews }) {
   useEffect(() => {
     const update = async () => setAllNews(await get.all())
     update()
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

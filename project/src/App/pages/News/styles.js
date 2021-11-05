@@ -45,14 +45,22 @@ export const Title = styled.h1`
   }
 `
 
-export const Cover = styled.img`
-  width: 100%;
-  margin: 18px 0;
-  border-radius: 8px;
+const styledCover = `
+width: 100%;
+margin: 18px 0;
+border-radius: 8px;
 
-  @media (max-width: 450px) {
-    margin: 12px 0;
-  }
+@media (max-width: 450px) {
+  margin: 12px 0;
+}
+`
+
+export const Cover = styled.img`
+  ${styledCover}
+`
+
+export const PseudoCover = styled.span`
+  ${styledCover}
 `
 
 export const Description = styled.p`
