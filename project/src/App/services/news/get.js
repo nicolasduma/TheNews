@@ -1,12 +1,6 @@
-import { db, storage } from '../../firebase'
+import { db } from '../../firebase'
 
 const newsCollection = db.collection('news')
-
-const cover = async id => {
-  const ref = storage.ref(`/Images/${id}.jpg`)
-
-  return await ref.getDownloadURL().then(url => url)
-}
 
 const all = async () => {
   const snapshot = await newsCollection.get()
@@ -19,10 +13,6 @@ const all = async () => {
     docs.push({ _id: doc.id, ...data })
   })
 
-  docs.forEach(async doc => (doc.cover = await cover('IMG_20210823_212319')))
-
-  console.log(docs)
-
   return docs.sort((a, b) => (a.created > b.created ? -1 : a.created < b.created ? 1 : 0))
 }
 
@@ -31,6 +21,6 @@ const newsById = async id => {
   return { _id: snapshot.id, ...snapshot.data() }
 }
 
-const services = { all, newsById, cover }
+const services = { all, newsById }
 
 export default services
