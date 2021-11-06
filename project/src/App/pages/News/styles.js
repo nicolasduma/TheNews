@@ -4,17 +4,6 @@ import fonts from '../../styles/index'
 export const Conteiner = styled.div`
   width: 100%;
   padding: 30px 20%;
-`
-
-export const Content = styled.div`
-  max-width: 850px;
-  display: flex;
-  flex-direction: column;
-
-  a {
-    align-self: center;
-    margin-bottom: 40px;
-  }
 
   @media (max-width: 1100px) {
     padding-left: 15%;
@@ -22,8 +11,8 @@ export const Content = styled.div`
   }
 
   @media (max-width: 700px) {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   @media (max-width: 500px) {
@@ -37,16 +26,28 @@ export const Content = styled.div`
   }
 `
 
+export const Content = styled.div`
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    align-self: center;
+    margin-bottom: 40px;
+  }
+`
+
 export const Title = styled.h1`
-  font-size: 4.5rem;
+  font-size: 4.8rem;
 
   @media (max-width: 700px) {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
   }
 `
 
 export const Cover = styled.img`
-  width: 100%;
+  max-width: 100%;
+  max-height: calc(566px + (2px / 3));
   margin: 18px 0;
   border-radius: 8px;
 
@@ -56,7 +57,7 @@ export const Cover = styled.img`
 `
 
 export const Description = styled.p`
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   font-family: ${fonts.poppins};
 `
@@ -65,7 +66,7 @@ export const Source = styled.span`
   margin-top: 8px;
   text-align: right;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 
   @media (max-width: 450px) {
     margin-top: 10px;
@@ -74,5 +75,5 @@ export const Source = styled.span`
 
 export const NotFoundNews = styled.h2`
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
 `
