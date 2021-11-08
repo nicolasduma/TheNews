@@ -1,4 +1,5 @@
 import Resizer from 'react-image-file-resizer'
+import imageCompression from 'browser-image-compression'
 import { addCover } from '../../../services/news/add'
 
 const resizeFile = file =>
@@ -36,7 +37,14 @@ const sendCover = async (file, nameFile) => {
     const newFile = await resizeFile(file)
     const image = dataURLtoFile(newFile, `${nameFile}.JPG`)
 
-    addCover(image)
+    const cover = await imageCompression(image, {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 900,
+    })
+
+    console.log(cover)
+
+    addCover(cover)
   } catch (error) {
     console.log(error)
   }
