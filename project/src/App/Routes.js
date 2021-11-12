@@ -13,13 +13,9 @@ function Routes({ states }) {
           <Route exact path={'/news/:id'}>
             <News allNews={states.allNews} />
           </Route>
-          <Route exact path={'/app/user/addNews/'}>
-            <AddNews />
-          </Route>
 
-          <Route exact path={'/app/user/'}>
-            <UserAdmin />
-          </Route>
+          <Route exact path={'/app/user/'} component={UserAdmin} />
+          <Route exact path={'/app/user/news/add'} component={AddNews} />
         </Switch>
       </main>
     </Router>
