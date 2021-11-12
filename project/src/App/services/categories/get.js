@@ -14,4 +14,16 @@ const service = async () => {
   })
 }
 
+export const getWithId = async () => {
+  const snapshot = await categoriesCollection.get()
+  let docs = []
+
+  snapshot.forEach(doc => docs.push([doc.id, doc.data().category]))
+  return docs.sort((a, b) => {
+    ;[a[1], b[1]] = [a[1].toUpperCase(), b[1].toUpperCase()]
+
+    return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0
+  })
+}
+
 export default service
