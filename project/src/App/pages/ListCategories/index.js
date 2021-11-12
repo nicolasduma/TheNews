@@ -1,0 +1,34 @@
+import { useEffect, useState } from 'react'
+
+import { Head } from '../../components'
+import { getWithId } from '../../services/categories/get'
+
+import { Conteiner, Content, ListItem, Text, Button } from './styled'
+
+function ListCategories() {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    const update = async () => setCategories(await getWithId())
+
+    update()
+  }, [])
+
+  return (
+    <Conteiner>
+      <Head title="TheNews - Lista de Categorias" />
+      <Content>
+        {categories[0]
+          ? categories.map(category => (
+              <ListItem key={category[0]}>
+                <Text children={category[1]} />
+                <Button children="Deletar" />
+              </ListItem>
+            ))
+          : ''}
+      </Content>
+    </Conteiner>
+  )
+}
+
+export default ListCategories
