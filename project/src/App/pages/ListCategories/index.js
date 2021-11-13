@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { Head } from '../../components'
 import { getWithId } from '../../services/categories/get'
+import deleteCategory from '../../services/categories/delete'
 
 import { Conteiner, Content, ListItem, Text, Button } from './styled'
 
@@ -22,7 +23,7 @@ function ListCategories() {
           ? categories.map(category => (
               <ListItem key={category[0]}>
                 <Text children={category[1]} />
-                <Button children="Deletar" />
+                <Button children="Deletar" onClick={() => deleteCategory(category[0])} />
               </ListItem>
             ))
           : ''}
