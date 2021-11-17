@@ -42,8 +42,6 @@ const sendCover = async (file, nameFile) => {
       maxWidthOrHeight: 900,
     })
 
-    console.log(cover)
-
     addCover(cover)
   } catch (error) {
     console.log(error)
