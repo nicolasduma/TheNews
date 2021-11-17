@@ -8,6 +8,7 @@ import { Conteiner, Content, ListItem, Text, Button } from './styled'
 
 function ListCategories() {
   const [categories, setCategories] = useState([])
+  const [lockedFunction, setLockedFunction] = useState(false)
 
   useEffect(() => {
     const update = async () => setCategories(await getWithId())
@@ -23,7 +24,18 @@ function ListCategories() {
           ? categories.map(category => (
               <ListItem key={category[0]}>
                 <Text children={category[1]} />
-                <Button children="Deletar" onClick={() => deleteCategory(category[0])} />
+                <Button
+                  children="Deletar"
+                  onClick={() =>
+                    deleteCategory(
+                      category[0],
+                      categories,
+                      setCategories,
+                      lockedFunction,
+                      setLockedFunction
+                    )
+                  }
+                />
               </ListItem>
             ))
           : ''}
