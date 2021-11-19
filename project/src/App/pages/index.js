@@ -1,6 +1,7 @@
 export { default as Home } from './Home'
 export { default as News } from './News'
-export { default as AddNews } from './AddNews'
 export { default as UserAdmin } from './UserAdmin'
+export { default as ListNews } from './ListNews'
+export { default as AddNews } from './AddNews'
 export { default as ListCategories } from './ListCategories'
 export { default as AddCategory } from './AddCategory'
