@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import { Conteiner, Content, NewsConteiner, TextConteiner, TextId, Title, Button } from './styled'
 import { Head } from '../../components'
 import get from '../../services/news/get'
+import deleteNews from '../../services/news/delete'
 
 function ListNews() {
   const [allNews, setAllNews] = useState([])
+  const [lockedFunction, setLockedFunction] = useState(false)
 
   useEffect(() => {
     const update = async () => setAllNews(await get.all())
@@ -25,7 +27,12 @@ function ListNews() {
                   <TextId children={news._id} />
                   <Title children={news.title} />
                 </TextConteiner>
-                <Button children="Deletar" />
+                <Button
+                  children="Deletar"
+                  onClick={() =>
+                    deleteNews(news._id, allNews, setAllNews, lockedFunction, setLockedFunction)
+                  }
+                />
               </NewsConteiner>
             ))
           : ''}
