@@ -23,9 +23,9 @@ function AddNews() {
   const [lockedSend, setLockedSend] = useState(false)
 
   const [valueCategory, setValueCategory] = useState('')
-  const [valueTitle, setValueTitle] = useState('123')
-  const [valueDescription, setValueDescription] = useState('123')
-  const [valueSource, setValueSource] = useState('123')
+  const [valueTitle, setValueTitle] = useState('')
+  const [valueDescription, setValueDescription] = useState('')
+  const [valueSource, setValueSource] = useState('')
   const [valueCover, setValueCover] = useState(['', ''])
 
   useEffect(() => {
