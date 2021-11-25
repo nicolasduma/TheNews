@@ -1,6 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { Home, News, UserAdmin, ListNews, AddNews, ListCategories, AddCategory } from './pages'
+import {
+  Home,
+  News,
+  Login,
+  UserAdmin,
+  ListNews,
+  AddNews,
+  ListCategories,
+  AddCategory,
+} from './pages'
 
 function Routes({ states }) {
   return (
@@ -14,6 +23,7 @@ function Routes({ states }) {
             <News allNews={states.allNews} />
           </Route>
 
+          <Route exact path={'/app/'} component={Login} />
           <Route exact path={'/app/user/'} component={UserAdmin} />
           <Route exact path={'/app/user/news'} component={ListNews} />
           <Route exact path={'/app/user/news/add'} component={AddNews} />
