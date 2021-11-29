@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { auth } from './firebase'
 
 import {
   Home,
@@ -11,7 +13,28 @@ import {
   AddCategory,
 } from './pages'
 
+const routesWithLogedUser = (
+  <Switch>
+    <Route exact path={'/app/user/'} component={UserAdmin} key="routeApp" />
+    <Route exact path={'/app/user/news'} component={ListNews} key="routeNews" />
+    <Route exact path={'/app/user/news/add'} component={AddNews} key="routeNewsAdd" />
+    <Route exact path={'/app/user/categories'} component={ListCategories} key="routeCategories" />
+    <Route
+      exact
+      path={'/app/user/categories/add'}
+      component={AddCategory}
+      key="routeCategoriesAdd"
+    />
+  </Switch>
+)
+
 function Routes({ states }) {
+  const [logedUser, setLogedUser] = useState({})
+
+  auth.onAuthStateChanged(user => {
+    if (user) setLogedUser(user)
+  })
+
   return (
     <Router>
       <main>
@@ -22,13 +45,11 @@ function Routes({ states }) {
           <Route exact path={'/news/:id'}>
             <News allNews={states.allNews} />
           </Route>
+          <Route exact path={'/app'}>
+            <Login logedUser={logedUser} setLogedUser={setLogedUser} />
+          </Route>
 
-          <Route exact path={'/app/'} component={Login} />
-          <Route exact path={'/app/user/'} component={UserAdmin} />
-          <Route exact path={'/app/user/news'} component={ListNews} />
-          <Route exact path={'/app/user/news/add'} component={AddNews} />
-          <Route exact path={'/app/user/categories'} component={ListCategories} />
-          <Route exact path={'/app/user/categories/add'} component={AddCategory} />
+          {logedUser.uid === 'UZLLljIBh0Q15eU2stluLsrvtJC2' ? routesWithLogedUser : ''}
         </Switch>
       </main>
     </Router>
