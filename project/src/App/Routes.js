@@ -11,6 +11,7 @@ import {
   AddNews,
   ListCategories,
   AddCategory,
+  PageNotFound,
 } from './pages'
 
 const routesWithLogedUser = (
@@ -25,6 +26,7 @@ const routesWithLogedUser = (
       component={AddCategory}
       key="routeCategoriesAdd"
     />
+    <Route component={PageNotFound} />
   </Switch>
 )
 
@@ -50,6 +52,8 @@ function Routes({ states }) {
           </Route>
 
           {logedUser.uid === 'UZLLljIBh0Q15eU2stluLsrvtJC2' ? routesWithLogedUser : ''}
+
+          <Route component={PageNotFound} />
         </Switch>
       </main>
     </Router>
