@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Conteiner, Content, NewsConteiner, TextConteiner, TextId, Title, Button } from './styled'
 import { Head } from '../../components'
@@ -20,6 +21,7 @@ function ListNews() {
     <Conteiner>
       <Head title="The News - Lista de Notícias" />
       <Content>
+        <Link to={`/app/user`} children="Voltar" />
         {allNews[0]
           ? allNews.map(news => (
               <NewsConteiner key={news._id}>

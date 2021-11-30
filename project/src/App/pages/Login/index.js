@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouteMatch, Link } from 'react-router-dom'
 
 import login from '../../services/user/login'
@@ -20,6 +20,11 @@ function Login({ logedUser, setLogedUser }) {
   const [inputPasswordValue, setInputPasswordValue] = useState('')
 
   const match = useRouteMatch()
+  const [url, setUrl] = useState(match.url)
+
+  useEffect(() => {
+    if (match.url.slice(-1) !== '/') setUrl(match.url + '/')
+  }, [match])
 
   return (
     <Conteiner>
@@ -49,7 +54,7 @@ function Login({ logedUser, setLogedUser }) {
           </Form>
         ) : (
           <ConteinerLoged>
-            <Link children="Controles" to={`${match.url}/user`} />
+            <Link children="Controles" to={`${url}user`} />
             <Button
               children="Sair"
               onClick={() => {

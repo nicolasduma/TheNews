@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import addCategoty from '../../services/categories/add'
 import { Head } from '../../components'
@@ -24,6 +25,7 @@ function AddCategory() {
         onChange={event => setValueInput(event.target.value)}
       />
       <Button children="Enviar" />
+      <Link to={`/app/user`} children="Voltar" />
     </Conteiner>
   )
 }

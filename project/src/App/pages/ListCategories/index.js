@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Head } from '../../components'
 import { getWithId } from '../../services/categories/get'
@@ -20,6 +21,7 @@ function ListCategories() {
     <Conteiner>
       <Head title="TheNews - Lista de Categorias" />
       <Content>
+        <Link to={`/app/user`} children="Voltar" />
         {categories[0]
           ? categories.map(category => (
               <ListItem key={category[0]}>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Head } from '../../components'
 import {
@@ -39,7 +40,7 @@ function AddNews() {
 
   return (
     <Conteiner className="AddNews">
-      <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - adicionar notícia" />
+      <Head htmlAttributes={{ lang: 'pt-br' }} title="TheNews - Adicionar notícia" />
 
       <Content>
         <Title>Adicionar Notícia</Title>
@@ -131,6 +132,7 @@ function AddNews() {
           </FieldForm>
 
           <Button type="submit" children="Enviar" />
+          <Link to={`/app/user`} children="Voltar" />
         </Form>
       </Content>
     </Conteiner>
