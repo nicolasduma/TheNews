@@ -96,7 +96,7 @@ function AddNews() {
             <TextArea
               id="text-description"
               type="text"
-              maxLength={1000}
+              maxLength={15000}
               required
               value={valueDescription}
               onChange={event => setValueDescription(event.target.value)}
