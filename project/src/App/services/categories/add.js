@@ -2,10 +2,10 @@ import { db } from '../../firebase'
 
 function add(lockedFunction, setLockedFunction, stringValue) {
   if (!lockedFunction) {
-    db.collection('categories').add({ category: stringValue })
-    alert('Categoria adicionada!')
     setLockedFunction(true)
     try {
+      db.collection('categories').add({ category: stringValue })
+      alert('Categoria adicionada!')
       setLockedFunction(false)
     } catch (error) {
       alert(`Erro: ${error}`)
