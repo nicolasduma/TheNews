@@ -16,7 +16,7 @@ import {
 
 const routesWithLogedUser = (
   <Switch>
-    <Route exact path={'/app/user/'} component={UserAdmin} key="routeApp" />
+    <Route exact path={'/app/user'} component={UserAdmin} key="routeApp" />
     <Route exact path={'/app/user/news'} component={ListNews} key="routeNews" />
     <Route exact path={'/app/user/news/add'} component={AddNews} key="routeNewsAdd" />
     <Route exact path={'/app/user/categories'} component={ListCategories} key="routeCategories" />
