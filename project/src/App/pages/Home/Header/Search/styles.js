@@ -48,6 +48,7 @@ export const Conteiner = styled.div`
     width: 120px;
     padding-right: 12px;
     position: relative;
+    background-color: #fff;
     cursor: pointer;
   }
 
