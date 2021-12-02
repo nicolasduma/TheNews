@@ -79,7 +79,7 @@ npx create-react-app project
 5. Open the appropriate directory:
 
 ```
-cd project`
+cd project
 ```
 
 6. Install dependencies:
